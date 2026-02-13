@@ -13,9 +13,8 @@ public class RestClientCountriesFetcher implements CountriesFetcher {
     }
 
     @Override
-    public String fetch(String url) {
+    public String fetch() {
         return restClient.get()
-                .uri(url)
                 .retrieve()
                 .body(String.class);
     }

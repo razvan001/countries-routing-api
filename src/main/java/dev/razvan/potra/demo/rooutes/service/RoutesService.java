@@ -16,14 +16,11 @@ public class RoutesService {
 
     private final CountriesFetcher countriesFetcher;
     private final ObjectMapper objectMapper;
-    private final String countriesDataUrl;
 
     public RoutesService(CountriesFetcher countriesFetcher,
-                         ObjectMapper objectMapper,
-                         @Value("${countries.data.url}") String countriesDataUrl) {
+                         ObjectMapper objectMapper) {
         this.countriesFetcher = countriesFetcher;
         this.objectMapper = objectMapper;
-        this.countriesDataUrl = countriesDataUrl;
     }
 
     public List<String> computeRoute(String origin, String destination) {
@@ -33,7 +30,7 @@ public class RoutesService {
     }
 
     private List<Country> fetchCountries() {
-        var responseBody = countriesFetcher.fetch(countriesDataUrl);
+        var responseBody = countriesFetcher.fetch();
         try {
             return objectMapper.readValue(responseBody, new TypeReference<>() {
             });

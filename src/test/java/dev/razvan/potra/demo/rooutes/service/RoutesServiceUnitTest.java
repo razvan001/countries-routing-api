@@ -20,7 +20,7 @@ class RoutesServiceUnitTest {
 
     @BeforeEach
     void setUp() {
-        service = new RoutesService(countriesFetcher, new ObjectMapper(), "http://example/countries.json");
+        service = new RoutesService(countriesFetcher, new ObjectMapper());
     }
 
     @Test
@@ -30,7 +30,7 @@ class RoutesServiceUnitTest {
                 "\"cca3\":\"AUT\",\"borders\":[\"ITA\"]},{" +
                 "\"cca3\":\"ITA\",\"borders\":[]}]";
 
-        when(countriesFetcher.fetch("http://example/countries.json")).thenReturn(json);
+        when(countriesFetcher.fetch()).thenReturn(json);
 
         var route = service.computeRoute("CZE", "ITA");
 
@@ -41,7 +41,7 @@ class RoutesServiceUnitTest {
     void should_returnEmpty_when_noPathFound() {
         var json = "[{\"cca3\":\"AAA\",\"borders\":[]},{\"cca3\":\"BBB\",\"borders\":[]}]";
 
-        when(countriesFetcher.fetch("http://example/countries.json")).thenReturn(json);
+        when(countriesFetcher.fetch()).thenReturn(json);
 
         var route = service.computeRoute("AAA", "BBB");
 
