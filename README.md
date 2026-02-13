@@ -65,4 +65,5 @@ If `springdoc-openapi` is present (it is added in `pom.xml`), the Swagger UI is 
 
 - Origin and destination are expected to be ISO 3166-1 alpha-3 (CCA3) country codes (e.g., `CZE`, `AUT`, `ITA`).
 - Route computation currently uses a BFS over country borders derived from the dataset.
+- For production use, consider caching the countries dataset to avoid fetching on each request.
 
