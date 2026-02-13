@@ -1,4 +1,4 @@
-package dev.razvan.potra.demo.rooutes.web.service;
+package dev.razvan.potra.demo.rooutes.service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.BeforeEach;

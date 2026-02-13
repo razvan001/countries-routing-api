@@ -1,7 +1,7 @@
 package dev.razvan.potra.demo.rooutes.web;
 
 import dev.razvan.potra.demo.rooutes.web.dto.RouteResponse;
-import dev.razvan.potra.demo.rooutes.web.service.RoutesService;
+import dev.razvan.potra.demo.rooutes.service.RoutesService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -9,7 +9,6 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 import org.springframework.http.HttpStatus;
